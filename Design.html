@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" >
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/design.css" />
+	<link rel="stylesheet" href="css/jquery.treeview.css"/>
+	<link rel="stylesheet" href="css/default/style.min.css"/>
+
+	<script src="js/lib/jquery-2.2.3.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>-->
+	<script src="js/lib/jstree.js"></script>
+	<script src="js/lib/jszip.js"></script>
+	<script src="js/lib/three.js"></script>
+	<script src="js/customize_three.js"></script>
+	<script src="js/lib/Mirror.js"></script>
+	<script src="js/lib/OrbitControls.js"></script>
+	<script src="js/lib/AnimationHandler.js"></script>
+	<script src="js/lib/KeyFrameAnimation.js"></script>
+	<script src="js/lib/MyColladaLoader.js"></script>
+	<script src="js/lib/myObjectLoader/myBufferGeometryLoader.js"></script>
+	<script src="js/lib/myObjectLoader/myObjectLoader.js"></script>
+	<script src="js/lib/myObjectLoader/ZipModelLoader.js"></script>
+	<script src="js/lib/TransformControls.js"></script>
+	<script src="js/lib/ui.js"></script>
+	<script src="js/lib/ui.three.js"></script>
+	<script src="js/Utils.js"></script>
+	<script src="js/Project.js"></script>
+	<script src="js/HouseProject.js"></script>
+	<script src="js/EstateProject.js"></script>
+	<script src="js/Exhibition.js"></script>
+	<script src="js/exportJson.js"></script>
+	<script src="js/TreeView.js"></script>
+	<script src="js/ModelStyles.js"></script>
+	<script src="js/SideBar.js"></script>
+	<script src="js/SideBar.WallDirection.js"></script>
+	<script src="js/SideBar.Material.js"></script>
+	<script src="js/SideBar.Light.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div id="TreeView" class="TreePort">
+				<ul id="project-root-list">
+					<span>Root</span>
+				</ul>
+			</div>
+			<div id="ViewPort" class="DisPlay">
+			</div>
+			<div id="sidebar" >
+			</div>
+		</div>
+		<div id="files-entrypoint">
+			<input type="file" multiple id="select-files" style="display: none"/>
+			<input type="file" nwdirectory id="open-directory" style="display: none"/>
+			<input type="file" nwdirectory id="save-as-directory" style="display: none"/>
+			<input type="file" id="save-file" nwsaveas style="display: none" />
+		</div>
+	</div>
+
+	<script src="js/ModelEditor.js"></script>
+</body>
+</html>

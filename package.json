@@ -1,0 +1,16 @@
+{
+  "name": "ModelEditor",
+  "main": "Design.html",
+  "version": "0.4.5",
+  "window": {
+    "toolbar": true,
+    "width": 1024,
+    "height": 800,
+    "resiable": true,
+    "min_width": 800,
+    "title": "Model Editor"
+  },
+  "devDependencies": {
+    "nw-builder": "^2.2.0"
+  }
+}
