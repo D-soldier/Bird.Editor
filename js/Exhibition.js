@@ -32,8 +32,11 @@ Exhibition.prototype.onLoadModel = function(model){
 
 Exhibition.prototype.saveAsProject = function(saveDir){
 
-    
-    this.animationStop();
+    if ( this.currentAnimation !== null ) {
+            
+        this.animationStop();
+
+    }
 
     this.saveDir = saveDir;
     var scene = {

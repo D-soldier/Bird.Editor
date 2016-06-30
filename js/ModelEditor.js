@@ -547,6 +547,27 @@ var child = require('child_process');
         var animationName = document.createElement('input');
         animationName.type = 'text';
 
+        var optionDiv = document.createElement('div');
+        optionDiv.className = "optDiv";
+
+        var fileDiv = document.createElement('div');
+        fileDiv.className = "fileDiv";
+        fileDiv.innerHTML = '选择文件';
+
+        var animationSelect = document.createElement('select');
+        animationSelect.name = 'animationName';
+
+        var displayOption = document.createElement('option');
+        displayOption.value = 'displayAnimation';
+        displayOption.innerHTML = '使用动画';
+
+        var buildOption = document.createElement('option');
+        buildOption.value = 'buildAnimation';
+        buildOption.innerHTML = '组装动画';
+
+        animationSelect.appendChild(displayOption);
+        animationSelect.appendChild(buildOption);
+
         var animationFile = document.createElement('input');
         animationFile.type = 'file';
         animationFile.id = 'select-files';
@@ -559,7 +580,8 @@ var child = require('child_process');
 
         okButton.addEventListener('click', function( event ) {
 
-            var name = animationName.value;
+            //var name = animationName.value;
+            var name = animationSelect.value;
             var filePath = animationFile.value;
             scope.importAnimation( name, filePath );
             document.body.removeChild( dialog );
@@ -582,9 +604,13 @@ var child = require('child_process');
         buttons.appendChild(okButton);
         buttons.appendChild( cancelButton );
 
+        optionDiv.appendChild( animationSelect );
+        fileDiv.appendChild( animationFile );
+        optionDiv.appendChild( fileDiv );
+
         dialog.appendChild( animationTitle );
-        dialog.appendChild( animationName );
-        dialog.appendChild( animationFile );
+       // dialog.appendChild( animationName );
+        dialog.appendChild( optionDiv );
         dialog.appendChild( buttons );
 
         document.body.appendChild( dialog );
