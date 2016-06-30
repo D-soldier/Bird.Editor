@@ -400,7 +400,7 @@ var child = require('child_process');
     };
 
     this.versionInfo = function(){
-        alert('版本号：0.4.8');
+        alert('版本号：1.0.0');
     };
 
     /**
