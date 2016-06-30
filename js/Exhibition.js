@@ -32,6 +32,9 @@ Exhibition.prototype.onLoadModel = function(model){
 
 Exhibition.prototype.saveAsProject = function(saveDir){
 
+    
+    this.animationStop();
+
     this.saveDir = saveDir;
     var scene = {
         version: this.version,
@@ -66,7 +69,6 @@ Exhibition.prototype.saveAsProject = function(saveDir){
     this.ExportMirror(scene);
 
     //save Animation
-    this.animationStop();
     var animationJson = this.animationsToJson( this.animations );
     this.writeJsonToFile(saveDir + "/Animation.json", this.JsonToString(animationJson));
 
@@ -138,7 +140,12 @@ Exhibition.prototype.setCurrentAnimationByIndex = function( index ) {
     var scope = this;
     if ( scope.currentAnimation !== scope.animations[index] ) {
 
-        scope.animationStop();
+        if ( scope.currentAnimation !== null ) {
+            
+            scope.animationStop();
+
+        }
+
         scope.currentAnimation = scope.animations[ index ];
         var animationClips = scope.currentAnimation.animationClips;
 
@@ -224,6 +231,7 @@ Exhibition.prototype.animationPause = function() {
 Exhibition.prototype.animationStop = function(){
 
     var scope = this;
+
     var animationActions = scope.currentAnimation.animationActions;
 
     for ( var i = 0; i < animationActions.length; i++ ) {
